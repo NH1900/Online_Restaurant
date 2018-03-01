@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container{
+    color:black;
+    margin:20px;
+    display:flex;
+}
