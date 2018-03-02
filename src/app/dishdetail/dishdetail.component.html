@@ -1,0 +1,34 @@
+<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+  <!--fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center" -->
+  <div fxFlex="40">
+      <md-card *ngIf="disha">
+          <md-card-header>
+            <md-card-title>
+              <h3>{{disha.name | uppercase}}</h3>  
+            </md-card-title>
+          </md-card-header>
+          <img md-card-image src="{{disha.image}}" alt="{{disha.name}}">
+          <md-card-content>
+            <p> {{disha.description}}</p>
+          </md-card-content>
+          <md-card-actions>
+            <button md-button>Like</button>
+            <button md-button>Share</button>  
+          </md-card-actions>
+        </md-card>
+  </div>
+  
+  <div fxFlex="40">
+      <md-list  *ngIf="disha">
+        <h1> <b>Comment</b></h1>
+        <md-list-item *ngFor="let dish2 of disha.comments">
+          <h2 md-line>{{dish2.comment}}</h2>
+          <p md-line>
+            <span>{{dish2.rating}} Stars</span>
+          </p>
+          
+          <p md-line>--{{dish2.author}} {{dish2.date | date}}</p>
+        </md-list-item>  
+      </md-list>
+  </div>
+</div>

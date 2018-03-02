@@ -9,12 +9,18 @@ import 'hammerjs';
 import { AppComponent } from './app.component';
 //after installation thie menu component is automatically imported into app
 import { MenuComponent } from './menu/menu.component';
+import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
-
+import {DishService} from './services/dish.service';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    DishdetailComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -22,7 +28,7 @@ import { MenuComponent } from './menu/menu.component';
     FlexLayoutModule,
     BrowserModule
   ],
-  providers: [],
+  providers: [DishService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
