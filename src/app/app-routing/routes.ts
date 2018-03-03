@@ -10,6 +10,6 @@ export const routes: Routes = [
     {path:'home',component:HomeComponent},
     {path:'menu',component:MenuComponent},
     //deflaut location if there is no URL provided
+    {path: 'contactus',component:ContactComponent},
     {path:'',redirectTo:'/home',pathMatch:'full'}
-
 ];
