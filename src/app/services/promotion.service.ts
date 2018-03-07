@@ -7,17 +7,17 @@ export class PromotionService {
 
   constructor() { }
 
-  getPromotions():Promotion[]{
-    return PROMOTIONS;
+  getPromotions():Promise<Promotion[]>{
+    return Promise.resolve(PROMOTIONS);
   }
 
-  getPromotion(id: number):Promotion{
-    return PROMOTIONS.filter((promo) => (promo.id === id))[0];
+  getPromotion(id: number):Promise<Promotion>{
+    return Promise.resolve(PROMOTIONS.filter((promo) => (promo.id === id))[0]);
   }
 
-  getFeaturedPromotion():Promotion{
+  getFeaturedPromotion():Promise<Promotion>{
     //the filter will return a sub array of dishes so we point [0] to output only one element
-    return PROMOTIONS.filter((promo) => (promo.featured))[0];
+    return Promise.resolve(PROMOTIONS.filter((promo) => (promo.featured))[0]);
   }
 
 }

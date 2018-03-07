@@ -6,16 +6,15 @@ import {DISHES} from '../shared/dishes';
 export class DishService {
 
   constructor() { }
-  getDishes():Dish[]{
-    return DISHES;
+  getDishes(): Promise<Dish[]> {
+    return Promise.resolve(DISHES);
   }
 
-  getDish(id: number):Dish{
-    return DISHES.filter((dish) => (dish.id === id))[0];
+  getDish(id: number): Promise<Dish> {
+    return Promise.resolve(DISHES.filter((dish) => (dish.id === id))[0]);
   }
 
-  getFeaturedDish():Dish{
-    //the filter will return a sub array of dishes so we point [0] to output only one element
-    return DISHES.filter((dish) => (dish.featured))[0];
+  getFeaturedDish(): Promise<Dish> {
+    return Promise.resolve(DISHES.filter((dish) => dish.featured)[0]);
   }
 }
