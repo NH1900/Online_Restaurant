@@ -13,8 +13,8 @@ $background-pale: #D1C4E9;
     @include zero-margin(70px,30px);
     background: $background-light ;
     color:floralwhite;
-    min-height: 150px;
-    max-height: 150px;
+    min-height: 100px;
+    max-height: 120px;
 }
 
 .active{
