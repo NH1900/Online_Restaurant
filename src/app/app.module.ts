@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactComponent } from './contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import {DishService} from './services/dish.service';
 import {PromotionService} from './services/promotion.service';
@@ -42,7 +43,8 @@ import { FormsModule } from '@angular/forms';
     FlexLayoutModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   entryComponents:[
     LoginComponent
