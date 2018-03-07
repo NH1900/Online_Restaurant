@@ -6,7 +6,7 @@
       </div>
   </div>
 
-  <div fxFlex>
+  <div fxFlex *ngIf="dishes">
       <md-grid-list cols="2" rowHeight="200px">
         <md-grid-tile *ngFor="let dishx of dishes" [routerLink]="['/dishdetail', dishx.id]"><!--(click)="onSelect(dishx)">-->
           <img height="200px" src={{dishx.image}} alt={{dishx.name}}>
@@ -15,7 +15,10 @@
           </md-grid-tile-footer>
         </md-grid-tile>
       </md-grid-list>
-    </div>
+  </div>
+  <div [hidden]="dishes">
+      <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
   
   <!--<div fxFlex *ngIf="selectedDish">
     <md-card>

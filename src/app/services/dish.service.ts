@@ -6,7 +6,7 @@ import {DISHES} from '../shared/dishes';
 export class DishService {
 
   constructor() { }
-  getDishes(): Promise<Dish[]> {
+  /*getDishes(): Promise<Dish[]> {
     return Promise.resolve(DISHES);
   }
 
@@ -16,5 +16,26 @@ export class DishService {
 
   getFeaturedDish(): Promise<Dish> {
     return Promise.resolve(DISHES.filter((dish) => dish.featured)[0]);
+  }*/
+
+  getDishes(): Promise<Dish[]> {
+    return new Promise(resolve=> {
+      // Simulate server latency with 2 second delay
+        setTimeout(() => resolve(DISHES), 2000);
+    });
+  }
+
+  getDish(id: number): Promise<Dish> {
+    return new Promise(resolve=> {
+      // Simulate server latency with 2 second delay
+        setTimeout(() => resolve(DISHES.filter((dish) => (dish.id === id))[0]), 2000);
+    });
+  }
+
+  getFeaturedDish(): Promise<Dish> {
+    return  new Promise(resolve=> {
+      // Simulate server latency with 2 second delay
+        setTimeout(() => resolve(DISHES.filter((dish) => dish.featured)[0]), 2000);
+    });
   }
 }
