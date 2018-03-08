@@ -1,7 +1,7 @@
 <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xs="0">
   <!--fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center" -->
-  <div fxFlex="40">
-      <md-card *ngIf="disha">
+  <div fxFlex="40" *ngIf="disha">
+      <md-card >
           <md-card-header>
             <md-card-title>
               <h3>{{disha.name | uppercase}}</h3>  
@@ -12,9 +12,12 @@
             <p> {{disha.description}}</p>
           </md-card-content>
           <md-card-actions>
+            <button md-button [routerLink]="['/dishdetail', prev]"><span class="fa fa-chevron-left fa-lg"></span></button>
             <button md-button (click)="goBack()">BACK</button>
             <button md-button>Like</button>
             <button md-button>Share</button>  
+            <span class="flex-spacer"></span>
+            <button md-button [routerLink]="['/dishdetail', next]"><span class="fa fa-chevron-right fa-lg"></span></button>
           </md-card-actions>
         </md-card>
         <div [hidden]="disha">
@@ -22,8 +25,8 @@
         </div>
   </div>
   
-  <div fxFlex="40">
-      <md-list  *ngIf="disha">
+  <div fxFlex="40" *ngIf="disha">
+      <md-list  >
         <h1> <b>Comment</b></h1>
         <md-list-item *ngFor="let dish2 of disha.comments">
           <h2 md-line>{{dish2.comment}}</h2>
