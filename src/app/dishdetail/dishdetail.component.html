@@ -40,5 +40,21 @@
       <div [hidden]="disha">
         <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
       </div>
+      
+      <form class="form" novalidate [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+        <p>
+          <md-input-container class="full-width">
+            <textarea mdInput formControlName="author" placeholder="Your Name" ></textarea>
+          </md-input-container> 
+        </p>
+        
+        <md-slider formControlName="rating" min="1" max="5" step="1" thumb-label=true tickInterval=1 ></md-slider>
+        <p>
+          <md-input-container class="full-width">
+            <textarea class="place" mdInput formControlName="comment" placeholder="Your Comment" rows=12></textarea>
+          </md-input-container> 
+        </p>
+      </form>
+  
   </div>
 </div>
