@@ -9,15 +9,19 @@
   <div fxFlex *ngIf="dishes">
       <md-grid-list cols="2" rowHeight="200px">
         <md-grid-tile *ngFor="let dishx of dishes" [routerLink]="['/dishdetail', dishx.id]"><!--(click)="onSelect(dishx)">-->
-          <img height="200px" src={{dishx.image}} alt={{dishx.name}}>
+          <img height="200px" src="{{BaseURL + dishx.image}}" alt={{dishx.name}}>
           <md-grid-tile-footer>
             <h1 md-line>{{dishx.name | uppercase}}</h1>
           </md-grid-tile-footer>
         </md-grid-tile>
       </md-grid-list>
   </div>
-  <div [hidden]="dishes">
-      <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
+  <div [hidden]="dishes || errMess">
+    <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+  <div *ngIf="errMess">
+    <h2>Error</h2>
+    <h4>{{errMess}}</h4>
   </div>
   
   <!--<div fxFlex *ngIf="selectedDish">

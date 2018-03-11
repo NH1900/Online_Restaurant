@@ -12,14 +12,18 @@
       <h3>{{dish.name | uppercase}}</h3>
     </md-card-title>
   </md-card-header>
-  <img md-card-image src={{dish.image}} alt={{dish.name}}>
+  <img md-card-image src="{{BaseURL + dish.image}}" alt={{dish.name}}>
   <md-card-content>
     <p>{{dish.description}}
     </p>
   </md-card-content>
 </md-card>
-<div [hidden]="dish">
+<div [hidden]="dish || dishErrMess">
   <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
+</div>
+<div *ngIf="dishErrMess">
+  <h2>Error</h2>
+  <h4>{{errMess}}</h4>
 </div>
 
 <md-card *ngIf="promotion" fxFlex>

@@ -7,7 +7,7 @@
               <h3>{{disha.name | uppercase}}</h3>  
             </md-card-title>
           </md-card-header>
-          <img md-card-image src="{{disha.image}}" alt="{{disha.name}}">
+          <img md-card-image src="{{BaseURL + disha.image}}" alt="{{disha.name}}">
           <md-card-content>
             <p> {{disha.description}}</p>
           </md-card-content>
@@ -20,8 +20,12 @@
             <button md-button [routerLink]="['/dishdetail', next]"><span class="fa fa-chevron-right fa-lg"></span></button>
           </md-card-actions>
         </md-card>
-        <div [hidden]="disha">
+        <div [hidden]="disha || errMess">
           <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
+        </div>
+        <div *ngIf="errMess">
+          <h2>Error</h2>
+          <h4>{{errMess}}</h4>
         </div>
   </div>
   
@@ -37,8 +41,12 @@
           <p md-line>--{{dish2.author}} {{dish2.date | date}}</p>
         </md-list-item>  
       </md-list>
-      <div [hidden]="disha">
+      <div [hidden]="disha || errMess">
         <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
+      </div>
+      <div *ngIf="errMess">
+        <h2>Error</h2>
+        <h4>{{errMess}}</h4>
       </div>
       
       <form class="form" novalidate [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
@@ -48,7 +56,6 @@
           </md-input-container> 
         </p>
         
-        <md-slider formControlName="rating" min="1" max="5" step="1" thumb-label=true tickInterval=1 ></md-slider>
         <p>
           <md-input-container class="full-width">
             <textarea class="place" mdInput formControlName="comment" placeholder="Your Comment" rows=12></textarea>

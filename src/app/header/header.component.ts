@@ -9,6 +9,7 @@ import { MdDialog, MdDialogRef } from '@angular/material';
 })
 export class HeaderComponent implements OnInit {
 
+  
   constructor(public dialog:MdDialog) { }
 
   ngOnInit() {
