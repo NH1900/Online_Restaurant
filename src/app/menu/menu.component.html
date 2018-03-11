@@ -6,9 +6,9 @@
       </div>
   </div>
 
-  <div fxFlex *ngIf="dishes">
+  <div fxFlex *ngIf="dishes"  [@expand]>
       <md-grid-list cols="2" rowHeight="200px">
-        <md-grid-tile *ngFor="let dishx of dishes" [routerLink]="['/dishdetail', dishx.id]"><!--(click)="onSelect(dishx)">-->
+        <md-grid-tile *ngFor="let dishx of dishes" [routerLink]="['/dishdetail', dishx.id]" appHighlight><!--(click)="onSelect(dishx)">-->
           <img height="200px" src="{{BaseURL + dishx.image}}" alt={{dishx.name}}>
           <md-grid-tile-footer>
             <h1 md-line>{{dishx.name | uppercase}}</h1>

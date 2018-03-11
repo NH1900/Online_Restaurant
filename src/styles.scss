@@ -1,5 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+$primary-color-pale:gray;
+$primary-color-dark:#312DA8;
+$primary-color:#673AB7;
+$primary-color-light:#D1C4E9;
+$primary-color-text:#FFFFFF;
+$accent-color:#FFC107;
+$primary-text-color:#212121;
+$secondary-text-color:#757575;
+$divider-color:#BDBDBD;
+@mixin zero-margin($pad-up-down, $pad-left-right){
+    margin:0px auto;
+    padding: $pad-up-down $pad-lefft-right;
+}
 
 body{
     padding: 0;
@@ -11,4 +24,27 @@ body{
     color:black;
     margin:20px;
     display:flex;
+}
+
+.background-primary{
+    background-color: $primary-text-color!important;
+}
+
+.background-accent{
+    background-color:$accent-color!important;
+}
+
+.text-floral-white{
+    color:floralwhite!important;
+}
+
+.text-spacer{
+    flex:1 1 auto;
+}
+
+.highlight {
+    background-color: $primary-color-pale;
+    border: 1px solid $primary-color-dark;
+    z-index: 1;
+    transform: scale(1.01);
 }

@@ -1,6 +1,6 @@
 <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xs="0">
   <!--fxLayout.xs="column" fxLayoutAlign.gt-md="space-around center" -->
-  <div fxFlex="40" *ngIf="disha">
+  <div fxFlex="40" *ngIf="disha" [@visibility]="visibility"  [@expand]>
       <md-card >
           <md-card-header>
             <md-card-title>
@@ -29,7 +29,7 @@
         </div>
   </div>
   
-  <div fxFlex="40" *ngIf="disha">
+  <div fxFlex="40" *ngIf="disha" [@visibility]="visibility"  [@expand]>
       <md-list  >
         <h1> <b>Comment</b></h1>
         <md-list-item *ngFor="let dish2 of disha.comments">

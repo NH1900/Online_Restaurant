@@ -54,7 +54,7 @@
       </div>
 
 
-        <div fxFlex *ngIf="leaders">
+        <div fxFlex *ngIf="leaders"  [@expand]>
           <h2>Corporate Leadership</h2>
           <md-grid-list cols="2" rowHeight="100px">
             <md-grid-tile *ngFor="let leader of leaders">
