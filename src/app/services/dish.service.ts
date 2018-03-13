@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Dish} from '../shared/dish';
-import {DISHES} from '../shared/dishes';
+//import {DISHES} from '../shared/dishes';
 
 import { Observable } from 'rxjs/Observable';
 //这个傻逼of要单独加。
@@ -8,9 +8,9 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/delay';
 import { Http, Response } from '@angular/http';
-import { baseURL } from '../shared/baseurl';
+//import { baseURL } from '../shared/baseurl';
 import { ProcessHttpmsgService } from './process-httpmsg.service';
-import 'rxjs/add/operator/catch';
+//import 'rxjs/add/operator/catch';
 import { RestangularModule, Restangular } from 'ngx-restangular';
 
 @Injectable()

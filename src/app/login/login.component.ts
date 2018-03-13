@@ -10,7 +10,7 @@ import {MdDialog, MdDialogRef} from '@angular/material';
 })
 export class LoginComponent implements OnInit {
 
-  user = {remember: false};
+  user = {username: '', password: '', remember: false};
   //create the a object of dialog (reference) to login component
   constructor(public dialogRef: MdDialogRef<LoginComponent>) { }
 

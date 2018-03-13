@@ -49,18 +49,29 @@
         <h4>{{errMess}}</h4>
       </div>
       
-      <form class="form" novalidate [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+      <form class="form" novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
         <p>
-          <md-input-container class="full-width">
-            <textarea mdInput formControlName="author" placeholder="Your Name" ></textarea>
+          <md-input-container class="full-width" 
+          dividerColor="{{(formErrors.author) ? 'warn' : 'primary'}}">
+            <textarea mdInput formControlName="author" placeholder="Your Name" required></textarea>
+            <md-hint>
+              <span [hidden]="!(formErrors.author)">
+                {{formErrors.author}}</span>
+            </md-hint>
           </md-input-container> 
         </p>
         
         <p>
-          <md-input-container class="full-width">
-            <textarea class="place" mdInput formControlName="comment" placeholder="Your Comment" rows=12></textarea>
+          <md-input-container class="full-width"
+          dividerColor="{{(formErrors.comment) ? 'warn' : 'primary'}}">
+            <textarea class="place" mdInput formControlName="comment" placeholder="Your Comment" rows=12 required></textarea>
+            <md-hint>
+              <span [hidden]="!(formErrors.comment)">
+                {{formErrors.comment}}</span>
+            </md-hint>
           </md-input-container> 
         </p>
+        <button type="submit" md-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">Submit</button>
       </form>
   
   </div>

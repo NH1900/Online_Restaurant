@@ -33,7 +33,7 @@
       <h3>{{promotion.name | uppercase}}</h3>
     </md-card-title>
   </md-card-header>
-  <img md-card-image src={{promotion.image}} alt={{promotion.name}}>
+  <img md-card-image src="{{BaseURL +promotion.image}}" alt={{promotion.name}}>
   <md-card-content>
     <p>{{promotion.description}}
     </p>
