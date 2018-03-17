@@ -40,6 +40,12 @@
           
           <p md-line>--{{dish2.author}} {{dish2.date | date}}</p>
         </md-list-item>  
+
+        <md-list-item *ngIf="commentForm.valid">
+            <h2 md-line>{{commentForm.value.comment}}</h2>
+            <p md-line><span>5 Stars</span></p>
+            <p md-line>--{{commentForm.value.author}}</p>
+        </md-list-item>
       </md-list>
       <div [hidden]="disha || errMess">
         <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>

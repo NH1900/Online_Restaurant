@@ -82,7 +82,10 @@ export class DishdetailComponent implements OnInit {
   }
 
   onSubmit() {
+    //一定是.value才能获取值。所以访问属性的时候也是.value.对应的属性名
     this.commentdata = this.commentForm.value;
+    this.disha.comments.push(this.commentdata);
+    this.commentdata.date = new Date().toISOString();
     console.log(this.commentdata);
     this.commentForm.reset({
       rating: 0,
@@ -92,6 +95,7 @@ export class DishdetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.createForm();
     this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
     this.route.params
       .switchMap((params: Params) => { this.visibility = 'hidden'; return this.dishservice.getDish(+params['id']); })
