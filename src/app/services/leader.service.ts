@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
-import {Leader} from '../shared/leader';
-import {LEADERS} from '../shared/leaders';
+import { Leader } from '../shared/leader';
+import { LEADERS } from '../shared/leaders';
 
 import { Observable } from 'rxjs/Observable';
 //这个傻逼of要单独加。
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
+
+import { ProcessHttpmsgService } from './process-httpmsg.service';
+//import 'rxjs/add/operator/catch';
+import { RestangularModule, Restangular } from 'ngx-restangular';
 @Injectable()
 export class LeaderService {
 
-  constructor() { }
+  constructor(private restangular: Restangular,
+    private processHTTPMsgService: ProcessHttpmsgService) { }
 
   // can write as getLeaders(): Leader[] no space between "getLeaders():" and "Leader[]"
   /*getLeaders():Promise<Leader[]>{
@@ -30,11 +35,14 @@ export class LeaderService {
   }*/
 
   getFeaturedLeader():Observable<Leader>{
-    return Observable.of(LEADERS.filter((leader) => (leader.featured))[0]).delay(2000);
+    return this.restangular.all('leaders').getList({featured: true})
+      .map(leaders => leaders[0]);
+    //Observable.of(LEADERS.filter((leader) => (leader.featured))[0]).delay(2000);
   }
 
   getLeaders():Observable<Leader[]>{
-    return Observable.of(LEADERS).delay(2000);
+    return this.restangular.all('leaders').getList();
+    //Observable.of(LEADERS).delay(2000);
   }
   
 }

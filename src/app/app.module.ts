@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
+import { FeedbackService } from './services/feedback.service';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -30,6 +31,7 @@ import { ProcessHttpmsgService } from './services/process-httpmsg.service';
 import { RestangularModule, Restangular } from 'ngx-restangular';
 import { RestangularConfigFactory } from './shared/restConfig';
 import { HighlightDirective } from './directives/highlight.directive';
+
 
 @NgModule({
   declarations: [
@@ -58,7 +60,7 @@ import { HighlightDirective } from './directives/highlight.directive';
   entryComponents:[
     LoginComponent
   ],
-  providers: [DishService,PromotionService,LeaderService,ProcessHttpmsgService,
+  providers: [DishService,PromotionService,LeaderService,ProcessHttpmsgService,FeedbackService,
     {provide: 'BaseURL', useValue: baseURL}],
   bootstrap: [AppComponent]
 })
