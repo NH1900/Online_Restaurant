@@ -1,5 +1,5 @@
 
-# [![template](src/illstruation_img/Template.png)](https://github.com/NH1900)
+# [![template](src/illstruation_img/Template.png) height="200px"](https://github.com/NH1900)
 # Restaurant
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.1.
