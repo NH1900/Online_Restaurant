@@ -10,10 +10,8 @@
 * [Future](#future work)
 
 # Background
-------
 
 # Usage
-------
 ## Restaurant
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.1.
@@ -44,7 +42,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 # Content
-------
 
 # Future
-------
+
