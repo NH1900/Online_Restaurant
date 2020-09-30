@@ -1,6 +1,6 @@
 
 # [![template](src/illstruation_img/Template.png)](https://github.com/NH1900)
-# Catalog
+# Catalogue
 * [Background](#background)
 * [Usage](#usage)
 * [Content](#content)
@@ -12,7 +12,7 @@
 * [Future](#future)
 
 # Background
-Built a Online restaurant for students to ordering dishes.
+Built an Online restaurant for students to ordering dishes.
 # Usage
 ## Restaurant
 
